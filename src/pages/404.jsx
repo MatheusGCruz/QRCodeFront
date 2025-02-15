@@ -1,4 +1,3 @@
-import sadTanuki from '.././img/sadTanukinbg.png'
 import '.././styles/404.css';
 
 function Page404 () {

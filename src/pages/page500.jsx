@@ -1,4 +1,3 @@
-import sadTanuki from '.././img/sadTanukinbg.png'
 import '.././styles/page500.css';
 
 function Page500 () {
