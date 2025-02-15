@@ -1,4 +1,4 @@
-import React, {useEffect, fetchData, useContext, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './App.css';
 import qrBase64 from './qr-code-base'
 import Page404 from './pages/404.jsx'
@@ -54,7 +54,7 @@ function App() {
 
       if (window.location.pathname.substring(0)){
         let subdir = window.location.pathname.substring(0);
-        if (!subdir || subdir == "/") {
+        if (!subdir || subdir === "/") {
           setShowMain(true);
         }
         else{
@@ -83,7 +83,8 @@ function App() {
         setShowMain(true);
       }
       setLoading(false);
-  }, []);
+      // eslint-disable-line
+  },[configs.tanukiApi, configs.tanukiBaseUrl]);
   
   
 
