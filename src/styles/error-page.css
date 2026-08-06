@@ -1,0 +1,86 @@
+.Page404-container,
+.Page500-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-image: url("../img/sadTanukinbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Brand heading */
+.Page404-text:first-child,
+.Page500-text:first-child {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.Page404-text:first-child::after,
+.Page500-text:first-child::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #148ea3, #7ad7e8);
+}
+
+/* Primary message */
+.Page404-text:nth-child(2),
+.Page500-text:nth-child(2) {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #7ad7e8;
+}
+
+/* Supporting copy */
+.Page404-text:nth-child(3),
+.Page500-text:nth-child(3) {
+  margin: 0.25rem 0;
+  font-size: 0.75em;
+  opacity: 0.85;
+}
+
+.Page404-text,
+.Page500-text {
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.Page404-container .App-link,
+.Page500-container .App-link {
+  margin-top: 1.75rem;
+  font-size: 0.9rem;
+  color: #7ad7e8;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.Page404-container .App-link:hover,
+.Page500-container .App-link:hover {
+  color: #9ce6f2;
+  border-bottom-color: #148ea3;
+}
+
+@media (max-width: 640px) {
+  .Page404-container,
+  .Page500-container {
+    background-position: center;
+  }
+}

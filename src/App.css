@@ -1,30 +1,9 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-qr-code {
-  height: 40vmin;
-  pointer-events: none;
-  border-radius: 25%;
-  border-style: solid;
-  border-width:1vh;
-  border-color: #148ea3;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo-spin-flag {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App-main {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -34,43 +13,267 @@
   font-size: calc(10px + 2vmin);
   color: white;
   background-image: url("./img/tanuki2nbg.png");
-  background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
-
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 2rem 1rem;
 }
+
+/* ---------- Headings ---------- */
+
+.App-title {
+  margin: 0;
+  font-size: clamp(2.25rem, 7vmin, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.App-title::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  margin: 0.9rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #148ea3, #7ad7e8);
+}
+
+.App-subtitle {
+  margin: 1rem 0 2rem;
+  max-width: 26ch;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.4vmin, 1.35rem);
+  letter-spacing: 0.04em;
+  color: #e8f4f8;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/* ---------- Form ---------- */
+
+.App-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  width: min(88vw, 460px);
+}
+
+.App-form-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #7ad7e8;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.App-text-area {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 2px solid #148ea3;
+  font-size: 1rem;
+  background-color: rgba(20, 25, 32, 0.85);
+  color: #f0f8fa;
+  margin: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.App-text-area::placeholder {
+  color: #7a8a99;
+}
+
+.App-text-area:focus {
+  outline: none;
+  border-color: #7ad7e8;
+  box-shadow: 0 0 0 4px rgba(20, 142, 163, 0.35);
+}
+
+.App-button {
+  min-height: 3rem;
+  min-width: 10rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background-color: #148ea3;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.App-button:hover:not(:disabled) {
+  background-color: #0f6f80;
+  transform: translateY(-1px);
+}
+
+.App-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.App-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(122, 215, 232, 0.5);
+}
+
+.App-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Error message ---------- */
+
+.App-error {
+  margin: 0.5rem 0;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 120, 120, 0.45);
+  background-color: rgba(60, 20, 20, 0.55);
+  color: #ffc2c2;
+  font-size: 0.9rem;
+}
+
+/* ---------- QR "sticker" with finder corner brackets ---------- */
+
+.App-qr-download {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  border-radius: 12px;
+  margin: 1.75rem 0 1rem;
+}
+
+.App-qr-code {
+  width: min(70vmin, 320px);
+  height: auto;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1.25rem solid #ffffff;
+  outline: 0.35rem solid #148ea3;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease;
+}
+
+.App-qr-download:hover .App-qr-code {
+  transform: translateY(-3px);
+}
+
+.App-qr-download::before,
+.App-qr-download::after {
+  content: '';
+  position: absolute;
+  width: 2.75rem;
+  height: 2.75rem;
+  z-index: 1;
+}
+
+.App-qr-download::before {
+  top: -0.9rem;
+  left: -0.9rem;
+  border-top: 0.5rem solid #7ad7e8;
+  border-left: 0.5rem solid #7ad7e8;
+  border-top-left-radius: 12px;
+}
+
+.App-qr-download::after {
+  bottom: -0.9rem;
+  right: -0.9rem;
+  border-bottom: 0.5rem solid #7ad7e8;
+  border-right: 0.5rem solid #7ad7e8;
+  border-bottom-right-radius: 12px;
+}
+
+/* ---------- Link results ---------- */
+
+.App-link-results {
+  width: min(88vw, 520px);
+  margin: 1.25rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(16, 22, 28, 0.65);
+  border: 1px solid rgba(20, 142, 163, 0.35);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.App-link-line {
+  margin: 0.3rem 0;
+  color: #cfdde3;
+}
+
+.App-original-link,
+.App-shorted-link {
+  color: #7ad7e8;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* ---------- Footer link ---------- */
 
 .App-link {
-  color: #148ea3;
-  font-size: calc(5px + 2vmin);
+  color: #7ad7e8;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.App-text-area{
-  min-height: 5vh;
-  min-width: 40vh;
-  border-radius: 10%;
-  border-style: solid;
-  border-width:1vh;
-  font-size: calc(10px + 2vmin);
+.App-link:hover {
+  color: #9ce6f2;
+  border-bottom-color: #148ea3;
+}
+
+/* ---------- Loading ---------- */
+
+.App-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #282c34;
-  color: aliceblue;
-  margin:1vh;
-  border-color: #148ea3;
-}
-.App-button{
-  min-height: 5vh;
-  min-width: 10vh;
-  border-radius: 0%;
-  border-style: groove;
-  border-width:1vh;
-  font-size: calc(10px + 2vmin);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-loading-text {
+  color: #9ca3af;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 480px) {
+  .App-qr-code {
+    border-width: 0.75rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-qr-download::before,
+  .App-qr-download::after {
+    width: 2rem;
+    height: 2rem;
+    border-width: 0.35rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .App-button,
+  .App-qr-code,
+  .App-link {
+    transition: none;
+  }
+
+  .App-qr-download:hover .App-qr-code {
+    transform: none;
   }
 }
