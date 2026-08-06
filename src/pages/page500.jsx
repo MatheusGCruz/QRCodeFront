@@ -1,31 +1,23 @@
-import '.././styles/page500.css';
+import '../styles/error-page.css';
 
-function Page500 () {
-
-    
-return (
+function Page500() {
+  return (
     <div className="App">
-        <header className="Page500-header">
-    
-          <h2 class="Page500-text">Tanuki </h2>
+      <main className="Page500-container">
+        <h1 className="Page500-text">Tanuki</h1>
+        <h2 className="Page500-text">Site under maintenance</h2>
+        <p className="Page500-text">Please check again later.</p>
+        <a
+          className="App-link"
+          href="https://antares.ninja"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Project Tanuki - Antares Ninja
+        </a>
+      </main>
+    </div>
+  );
+}
 
-          <br/>
-            <h3 class="Page500-text">Site under Maintenance</h3>
-            <p class="Page500-text">Please check again later</p>
-          <br/>      
-        <br/> 
-          <a
-            className="App-link"
-            href="https://antares.ninja"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Project Tanuki - Antares Ninja
-          </a>
-        </header>
-      </div>
-      );
-    }
-    
-    export default Page500;
-    
+export default Page500;

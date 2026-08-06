@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tanuki",
+  "name": "Tanuki - QR Generator & Link Shortener",
+  "description": "Generate QR codes and shorten links instantly with Tanuki.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#148ea3",
+  "background_color": "#282c34"
 }
